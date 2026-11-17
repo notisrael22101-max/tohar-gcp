@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1730"><title>טוהר | מעבדת נקודות בקרה</title>
+<style>
+:root{font-family:system-ui,-apple-system,'Segoe UI',Arial,sans-serif;color:#e9effa;background:#081326;font-variant-numeric:tabular-nums}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at top right,#142c51 0%,#081326 55%)}main{max-width:1040px;margin:auto;padding:20px 15px 65px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:10px 0 24px}.eyebrow{color:#7eb5fc;font-size:12px;letter-spacing:.07em}.top h1{font-size:27px;margin:4px 0 0}.version{font-size:12px;color:#a4b5ce;border:1px solid #30435f;padding:8px 12px;border-radius:40px}.lead{color:#acbdd3;line-height:1.65;font-size:14px;margin:0 0 22px}.grid{display:grid;grid-template-columns:1.12fr .88fr;gap:16px}.card{border:1px solid #263c59;background:rgba(19,35,58,.85);border-radius:18px;padding:19px;box-shadow:0 12px 26px rgba(0,0,0,.11)}.card h2{font-size:17px;margin:0 0 17px}.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:8px}.pill{font-size:12px;padding:6px 10px;border-radius:20px;background:#223a59;color:#c0d7f4}.pill.on{background:#174438;color:#70e8c1}.pill.error{background:#4a2934;color:#ffb7b9}.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.field{display:block;font-size:12px;color:#9cb2ce;margin-bottom:7px}input{background:#0c1b30;border:1px solid #38516e;border-radius:9px;padding:11px;color:#f5f8ff;font:inherit;width:100%;direction:ltr;text-align:left;outline:none}input:focus{border-color:#60a5fa}.inputgrp{margin:12px 0}.buttons{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}button{background:#397ef3;border:1px solid #397ef3;color:white;border-radius:11px;padding:12px 16px;font:inherit;font-weight:650;cursor:pointer}button.secondary{background:#142b47;border-color:#345474;color:#d7eaff}button.danger{background:#583045;border-color:#a34f68}button:disabled{opacity:.4;cursor:not-allowed}.buttons button{flex:1;min-width:115px}.status{margin:12px 0 0;color:#afc4df;font-size:13px;line-height:1.65;min-height:22px}.progress{height:8px;background:#09172a;border-radius:99px;overflow:hidden;margin:16px 0}.progress>div{height:100%;width:0%;background:linear-gradient(90deg,#23c5ba,#5d91ff);transition:width .2s}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.stat{background:#0d2037;border:1px solid #263c59;border-radius:12px;padding:13px 9px}.stat label{display:block;font-size:11px;color:#94a9c4;line-height:1.5}.stat strong{display:block;font-size:21px;margin-top:4px;font-weight:700}.unit{font-size:11px;color:#9cb2ce;margin-right:3px}.coords{margin:14px 0 0;padding:13px;background:#0b1c32;border-radius:11px;direction:ltr;text-align:left;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;line-height:1.8;overflow-wrap:anywhere}.notice{font-size:12px;line-height:1.7;color:#b5c5da;padding:11px 12px;border:1px solid #304460;background:#0b2038;border-radius:11px;margin-top:13px}.mini{color:#93aac8;font-size:12px;line-height:1.6}.graph{position:relative;background:#0a1b30;border:1px solid #2a405c;border-radius:13px;overflow:hidden}canvas{display:block;width:100%;height:270px}.legend{font-size:12px;color:#b7c9e0;display:flex;gap:17px;margin-top:10px}.dot{display:inline-block;width:9px;height:9px;border-radius:100%;margin-left:5px}.rowline{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #2b405c;padding:12px 0;font-size:13px}.rowline:last-child{border:none}.rowline span{color:#99b0cc}.rowline strong{font-weight:600;text-align:left;direction:ltr}.reference{margin-top:16px}.reference h2{margin-bottom:8px}.refresult{margin-top:10px;font-size:13px;color:#b4d1f5}.history{margin-top:17px}.historylist{display:grid;gap:9px}.historyitem{border-radius:11px;background:#0c2036;border:1px solid #28405e;padding:11px 13px;font-size:13px;line-height:1.7}.historyitem b{color:#dcecff}.historyitem small{color:#a8bcd4}.full{grid-column:1/-1}.warning{color:#ffcc95}.ok{color:#83edc4}.sr{position:absolute;clip:rect(0,0,0,0);width:1px;height:1px;overflow:hidden}footer{color:#8ba1c0;font-size:12px;margin-top:24px;line-height:1.7}@media(max-width:760px){.grid{grid-template-columns:1fr}.top h1{font-size:23px}.card{padding:15px}.stat strong{font-size:19px}main{padding:12px 12px 45px}.top{margin:8px 0 15px}}
+</style>
+</head>
+<body><main>
+<header class="top"><div><div class="eyebrow">TOHAR · FIELD REFERENCE LAB</div><h1>מעבדת נקודות בקרה</h1></div><span class="version">ניסוי v1.0</span></header>
+<p class="lead">מציבים את הטלפון ללא תזוזה, מפעילים איסוף ומקבלים אומדן מיקום ונתוני איכות. נקודת אמת ידועה מאפשרת למדוד שגיאה אמיתית בניסוי.</p>
+<div class="grid">
+<section class="card">
+<div class="sectionhead"><h2>01 · איסוף מדידות</h2><span class="pill" id="statePill">ממתין</span></div>
+<div class="fields"><div><label class="field" for="pointName">שם הנקודה</label><input id="pointName" value="GCP-01" maxlength="80" dir="auto" style="direction:auto;text-align:right"></div><div><label class="field" for="duration">משך איסוף (שניות)</label><input id="duration" type="number" min="10" max="600" step="1" value="30"></div></div>
+<div class="buttons"><button id="startBtn">התחל מדידה</button><button id="stopBtn" class="secondary" disabled>סיים עכשיו</button></div>
+<div class="progress" aria-label="התקדמות איסוף"><div id="progressBar"></div></div>
+<div class="stats"><div class="stat"><label>זמן שחלף</label><strong id="elapsed">0 <span class="unit">שנ׳</span></strong></div><div class="stat"><label>דגימות חדשות</label><strong id="samples">0</strong></div><div class="stat"><label>דיוק מדווח אחרון</label><strong id="reported">—</strong></div></div>
+<p class="status" id="status" role="status">יש להפעיל את האפליקציה ב־HTTPS או ב־localhost ולאשר הרשאת מיקום.</p>
+<div class="notice">הטיימר מודד זמן שעון, לא מספר דגימות. הדפדפן עשוי לספק פחות מ־30 עדכונים ב־30 שניות, ולעיתים מיקום משולב שאינו GNSS טהור.</div>
+</section>
+<section class="card">
+<h2>02 · תוצאה נוכחית</h2>
+<div class="stats"><div class="stat"><label>דגימות שהתקבלו</label><strong id="accepted">—</strong></div><div class="stat"><label>פיזור מרחבי RMS</label><strong id="rms">—</strong></div><div class="stat"><label>סחיפה בין חצאים</label><strong id="drift">—</strong></div></div>
+<div class="coords" id="coordinates">Latitude: —<br>Longitude: —</div>
+<div class="rowline"><span>שיטת אומדן</span><strong>Huber robust (local EN)</strong></div>
+<div class="rowline"><span>משך ואיכות נתונים</span><strong id="quality">—</strong></div>
+<div class="rowline"><span>סטיית תקן עצמית (משוערת)</span><strong id="internalSe">—</strong></div>
+<div class="notice">פיזור קטן או סטיית תקן עצמית קטנה אינם מעידים לבדם על דיוק מוחלט. שגיאות GNSS מתואמות והטיות סביבתיות עלולות להישאר גם אחרי מיצוע.</div>
+<div class="buttons"><button id="exportJson" class="secondary" disabled>ייצוא JSON</button><button id="exportCsv" class="secondary" disabled>ייצוא CSV</button></div>
+</section>
+<section class="card">
+<h2>03 · ענן המדידות במטרים</h2>
+<div class="graph"><canvas id="plot" aria-label="פיזור המדידות בציר מזרח וצפון"></canvas></div>
+<div class="legend"><span><i class="dot" style="background:#70a7fb"></i>דגימה תקינה</span><span><i class="dot" style="background:#e39b65"></i>דגימה חשודה</span><span><i class="dot" style="background:#60edc6"></i>אומדן</span></div>
+<p class="mini">הצירים מציגים היסט מקומי במטרים. במהלך איסוף ההצגה מתעדכנת; התוצאה הסופית תופיע בסיום.</p>
+</section>
+<section class="card">
+<h2>04 · השוואה לנקודת אמת</h2>
+<div class="fields"><div><label class="field" for="truthLat">קו רוחב ידוע (Latitude)</label><input id="truthLat" inputmode="decimal" placeholder="31.00000000"></div><div><label class="field" for="truthLon">קו אורך ידוע (Longitude)</label><input id="truthLon" inputmode="decimal" placeholder="35.00000000"></div></div>
+<div class="buttons"><button id="calcTruth" class="secondary">חשב שגיאה</button><button id="copyResult" class="secondary" disabled>העתק תוצאה</button></div>
+<div class="refresult" id="truthResult">הזן קואורדינטות WGS84 במעלות עשרוניות ובצע מדידה.</div>
+<div class="history"><div class="sectionhead"><h2>05 · סבבי מדידה</h2><span class="pill" id="runCount">0 סבבים</span></div><div class="historylist" id="historyList"><p class="mini">סבבי המדידה יופיעו כאן. ניתן להשוות מדידות חוזרות באותה נקודה.</p></div></div>
+</section>
+</div>
+<footer>המידע נשמר בזיכרון הדף בלבד ואינו נשלח לשרת. רענון הדף ימחק את המדידות שלא יוצאו. מומלץ לבצע ניסויים בשטח פתוח, לתעד תנאים ולהימנע מהזזת הטלפון. עבור יישור מפה יש לוודא שגם נקודת הבקרה וגם נקודת האמת מתייחסות לאותו סימון פיזי.</footer>
+</main>
+<script>
+'use strict';
+const $ = id=>document.getElementById(id);
+const R=6378137, RAD=Math.PI/180;
+let watchId=null, intervalId=null, startedAt=0, durationMs=30000, receiving=false, raw=[], runs=[], current=null, lastFixTs=-Infinity;
+const fmt=(v,d=2)=>Number.isFinite(v)?v.toFixed(d):'—';
+const hav=(lat1,lon1,lat2,lon2)=>{let a=Math.sin((lat2-lat1)*RAD/2)**2+Math.cos(lat1*RAD)*Math.cos(lat2*RAD)*Math.sin((lon2-lon1)*RAD/2)**2;return 2*6371008.8*Math.asin(Math.min(1,Math.sqrt(a)))};
+function en(lat,lon,lat0,lon0){return {e:(lon-lon0)*RAD*R*Math.cos(lat0*RAD),n:(lat-lat0)*RAD*R};}
+function unproject(e,n,lat0,lon0){return {lat:lat0+n/(RAD*R),lon:lon0+e/(RAD*R*Math.cos(lat0*RAD))};}
+function median(v){if(!v.length)return NaN;let a=[...v].sort((x,y)=>x-y);return a.length%2?a[(a.length-1)/2]:(a[a.length/2-1]+a[a.length/2])/2;}
+function analyze(data){
+ const valid=data.filter(x=>Number.isFinite(x.lat)&&Number.isFinite(x.lon)&&x.lat>=-90&&x.lat<=90&&x.lon>=-180&&x.lon<=180&&x.acc>0&&Number.isFinite(x.acc));
+ if(!valid.length)return null;
+ const lat0=median(valid.map(x=>x.lat)),lon0=median(valid.map(x=>x.lon));
+ const pts=valid.map(x=>({...x,...en(x.lat,x.lon,lat0,lon0)}));
+ let e=median(pts.map(x=>x.e)),n=median(pts.map(x=>x.n));
+ // Iteratively reweighted robust estimate. Accuracy is a horizontal uncertainty radius,
+ // not a per-axis Gaussian sigma: weights are intentionally capped to avoid dominance.
+ for(let it=0;it<15;it++){
+  const distances=pts.map(p=>Math.hypot(p.e-e,p.n-n));
+  const scale=Math.max(.7,1.4826*median(distances));let sw=0,se=0,sn=0;
+  for(let i=0;i<pts.length;i++){
+   let p=pts[i],d=distances[i],h=Math.min(1,1.5*scale/Math.max(d,1e-9));
+   let q=1/Math.pow(Math.max(2,Math.min(p.acc,50)),2);
+   let w=h*q;sw+=w;se+=w*p.e;sn+=w*p.n;
+  }
+  const ee=se/sw,nn=sn/sw;if(Math.hypot(ee-e,nn-n)<.0001){e=ee;n=nn;break}e=ee;n=nn;
+ }
+ let distances=pts.map(p=>Math.hypot(p.e-e,p.n-n));
+ const scale=Math.max(.7,1.4826*median(distances));
+ pts.forEach((p,i)=>{p.distance=distances[i];p.suspect=distances[i]>Math.max(8,3*scale);});
+ const clean=pts.filter(p=>!p.suspect);
+ const rms=clean.length?Math.sqrt(clean.reduce((s,p)=>s+p.distance*p.distance,0)/clean.length):NaN;
+ let timeSorted=[...clean].sort((a,b)=>a.fixTs-b.fixTs),half=Math.floor(timeSorted.length/2),first=timeSorted.slice(0,half),second=timeSorted.slice(half);
+ const mean=a=>a.length?{e:a.reduce((s,p)=>s+p.e,0)/a.length,n:a.reduce((s,p)=>s+p.n,0)/a.length}:null;
+ const m1=mean(first),m2=mean(second);
+ const drift=m1&&m2?Math.hypot(m1.e-m2.e,m1.n-m2.n):NaN;
+ const pos=unproject(e,n,lat0,lon0);
+ // Conservative descriptive proxy, NOT a calibrated uncertainty interval.
+ const proxy=Math.max(rms/Math.sqrt(Math.max(1,Math.floor(clean.length/5))),Number.isFinite(drift)?drift/2:0);
+ return {lat:pos.lat,lon:pos.lon,e,n,lat0,lon0,pts,accepted:clean.length,rejected:pts.length-clean.length,rms,drift,proxy};
+}
+function update(){
+ const result=analyze(raw);current=result;
+ $('samples').textContent=String(raw.length);
+ $('reported').textContent=raw.length?`${fmt(raw[raw.length-1].acc,1)} מ׳`:'—';
+ $('accepted').textContent=result?`${result.accepted} / ${raw.length}`:'—';
+ $('rms').textContent=result?`${fmt(result.rms)} מ׳`:'—';
+ $('drift').textContent=result&&Number.isFinite(result.drift)?`${fmt(result.drift)} מ׳`:'—';
+ $('internalSe').textContent=result?`${fmt(result.proxy)} מ׳ (לא מכויל)`:'—';
+ $('coordinates').innerHTML=result?`Latitude: ${fmt(result.lat,9)}<br>Longitude: ${fmt(result.lon,9)}`:'Latitude: —<br>Longitude: —';
+ const t=raw.length>1?(Math.max(...raw.map(p=>p.fixTs))-Math.min(...raw.map(p=>p.fixTs)))/1000:0;
+ $('quality').textContent=result?`${fmt(t,1)} שנ׳ של דגימות · ${result.rejected} חריגות`:'—';
+ $('exportJson').disabled=!raw.length;$('exportCsv').disabled=!raw.length;$('copyResult').disabled=!result;
+ calcTruth(false);draw();
+}
+function draw(){
+ const canvas=$('plot'),dpr=window.devicePixelRatio||1,rect=canvas.getBoundingClientRect(),w=Math.max(200,rect.width),h=270;
+ canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
+ const c=canvas.getContext('2d');c.setTransform(dpr,0,0,dpr,0,0);c.clearRect(0,0,w,h);
+ let points=current?.pts||[],bound=Math.max(5,...points.map(p=>Math.abs(p.e)),...points.map(p=>Math.abs(p.n)),current?Math.abs(current.e):0,current?Math.abs(current.n):0)*1.2;
+ const size=Math.min((w-65)/2,(h-45)/2);const x=e=>w/2+e/bound*size,y=n=>h/2-n/bound*size;
+ c.lineWidth=1;c.strokeStyle='#263f5f';
+ for(let j=-2;j<=2;j++){let px=w/2+j*size/2,py=h/2+j*size/2;c.beginPath();c.moveTo(px,10);c.lineTo(px,h-10);c.moveTo(10,py);c.lineTo(w-10,py);c.stroke();}
+ c.strokeStyle='#5c7eaa';c.beginPath();c.moveTo(w/2,10);c.lineTo(w/2,h-10);c.moveTo(10,h/2);c.lineTo(w-10,h/2);c.stroke();
+ c.font='11px system-ui';c.fillStyle='#9cb5d4';c.textAlign='left';c.fillText(`±${fmt(bound,1)} m`,11,18);c.fillText('E →',w-44,h/2-8);c.fillText('N ↑',w/2+8,18);
+ points.forEach(p=>{c.beginPath();c.arc(x(p.e),y(p.n),3.5,0,2*Math.PI);c.fillStyle=p.suspect?'#e39b65':'#70a7fb';c.fill();});
+ if(current){let xx=x(current.e),yy=y(current.n);c.strokeStyle='#60edc6';c.lineWidth=2;c.beginPath();c.moveTo(xx-9,yy);c.lineTo(xx+9,yy);c.moveTo(xx,yy-9);c.lineTo(xx,yy+9);c.stroke();c.beginPath();c.arc(xx,yy,5,0,2*Math.PI);c.fillStyle='#60edc6';c.fill();}
+}
+function state(s,type=''){let el=$('statePill');el.textContent=s;el.className=`pill ${type}`;}
+function message(s,kind=''){$('status').textContent=s;$('status').className='status '+kind;}
+function fix(pos){
+ const p=pos.coords,ts=pos.timestamp;
+ if(!Number.isFinite(ts)||ts<=lastFixTs)return;
+ if(!Number.isFinite(p.latitude)||!Number.isFinite(p.longitude)||!Number.isFinite(p.accuracy)||p.accuracy<=0)return;
+ // Ignore obviously cached fixes issued before the session begins.
+ if(ts<startedAt-1500)return;
+ lastFixTs=ts;
+ raw.push({lat:p.latitude,lon:p.longitude,acc:p.accuracy,alt:p.altitude,altAcc:p.altitudeAccuracy,speed:p.speed,heading:p.heading,fixTs:ts,receivedAt:Date.now()});
+ if(raw.length===1)message('התקבלה מדידה ראשונה. יש להשאיר את הטלפון ללא תנועה.','ok');
+ update();
+}
+function fail(err){
+ const msg={1:'הרשאת המיקום נדחתה. יש לאפשר גישה למיקום בהגדרות האתר.',2:'המכשיר אינו מצליח לספק מיקום כרגע.',3:'פג הזמן לקבלת מיקום; ממשיכים להמתין.'}[err.code]||`שגיאת מיקום: ${err.message||'לא ידועה'}`;
+ message(msg,'warning');if(err.code===1)stop(true);
+}
+function tick(){let elapsed=Math.max(0,(Date.now()-startedAt)/1000);$('elapsed').innerHTML=`${fmt(elapsed,0)} <span class="unit">שנ׳</span>`;$('progressBar').style.width=`${Math.min(100,elapsed*1000/durationMs)}%`;if(elapsed*1000>=durationMs)stop();}
+function start(){
+ if(receiving)return;
+ if(!window.isSecureContext){message('הדף אינו בהקשר מאובטח. יש להעלות ל־HTTPS או להשתמש ב־localhost.','warning');return;}
+ if(!navigator.geolocation){message('הדפדפן הזה אינו תומך ב־Geolocation.','warning');return;}
+ const secs=Number($('duration').value);if(!Number.isInteger(secs)||secs<10||secs>600){message('משך המדידה חייב להיות בין 10 ל־600 שניות.','warning');return;}
+ durationMs=secs*1000;raw=[];current=null;lastFixTs=-Infinity;startedAt=Date.now();receiving=true;
+ $('startBtn').disabled=true;$('stopBtn').disabled=false;$('duration').disabled=true;state('מודד','on');message('ממתין למדידת המיקום הראשונה…');update();tick();
+ try{watchId=navigator.geolocation.watchPosition(fix,fail,{enableHighAccuracy:true,maximumAge:0,timeout:15000});intervalId=setInterval(tick,200);}catch(e){message(`לא ניתן להפעיל מיקום: ${e.message}`,'warning');stop(true);}
+}
+function stop(discard=false){
+ if(!receiving)return;receiving=false;
+ if(watchId!==null){navigator.geolocation.clearWatch(watchId);watchId=null;}
+ if(intervalId!==null){clearInterval(intervalId);intervalId=null;}
+ $('startBtn').disabled=false;$('stopBtn').disabled=true;$('duration').disabled=false;
+ const seconds=(Date.now()-startedAt)/1000;
+ if(raw.length&&!discard){
+  const res=analyze(raw);runs.unshift({name:$('pointName').value.trim()||'GCP',started:new Date(startedAt).toISOString(),duration:seconds,raw:raw.map(x=>({...x})),result:res});
+  $('runCount').textContent=`${runs.length} סבבים`;renderHistory();state('הושלם');message(`המדידה הסתיימה: ${raw.length} דגימות חדשות במהלך ${fmt(seconds,1)} שניות.`,'ok');
+ }else{state('ללא נתונים','error');message('לא התקבלו מדידות תקינות בסבב זה. בדוק הרשאות מיקום והפעל מדידה נוספת.','warning');}
+ update();
+}
+function truthValues(){let a=$('truthLat').value.trim(),b=$('truthLon').value.trim();if(!a&&!b)return null;let lat=Number(a),lon=Number(b);if(!a||!b||!Number.isFinite(lat)||!Number.isFinite(lon)||lat < -90||lat>90||lon < -180||lon>180)return 'invalid';return {lat,lon};}
+function calcTruth(notify=true){const tr=truthValues();if(!tr){$('truthResult').textContent='הזן קואורדינטות WGS84 במעלות עשרוניות ובצע מדידה.';return;}if(tr==='invalid'){$('truthResult').textContent='ערכי נקודת האמת אינם תקינים.';return;}
+ if(!current){$('truthResult').textContent='נקודת האמת הוזנה. יש לבצע מדידה.';return;}
+ const diff=en(current.lat,current.lon,tr.lat,tr.lon);const err=hav(current.lat,current.lon,tr.lat,tr.lon);
+ $('truthResult').innerHTML=`<b class="${err<=2?'ok':'warning'}">שגיאה אופקית אמיתית: ${fmt(err,3)} מ׳</b><br>הפרש ביחס לאמת: ${fmt(diff.e,2)} מ׳ מזרחה, ${fmt(diff.n,2)} מ׳ צפונה. <br><span class="mini">זהו המרחק מהאומדן לנקודת האמת שהוזנה, לא שגיאת דיוק מדווחת.</span>`;
+}
+function renderHistory(){const el=$('historyList');el.replaceChildren();runs.forEach((run,i)=>{let item=document.createElement('div');item.className='historyitem';let tr=truthValues(),error=tr&&tr!=='invalid'?hav(run.result.lat,run.result.lon,tr.lat,tr.lon):NaN;
+ const title=document.createElement('b');title.textContent=`${i+1}. ${run.name}`;
+ const details=document.createElement('div');details.textContent=`${run.raw.length} דגימות · ${fmt(run.duration,1)} שנ׳ · RMS ${fmt(run.result.rms,2)} מ׳${Number.isFinite(error)?` · שגיאת אמת ${fmt(error,2)} מ׳`:''}`;
+ const small=document.createElement('small');small.textContent=new Date(run.started).toLocaleString('he-IL');item.append(title,details,small);el.append(item);});}
+function download(content,name,mime){let blob=new Blob([content],{type:mime}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),30000);}
+function filename(ext){return `tohar_${($('pointName').value.trim()||'gcp').replace(/[^a-zA-Z0-9\u0590-\u05ff_-]/g,'_')}_${new Date().toISOString().replace(/[:.]/g,'-')}.${ext}`;}
+function exportData(mode){if(!raw.length)return;
+ if(mode==='json'){let tr=truthValues();const payload={schema:'tohar_gcp_lab_v1',exported:new Date().toISOString(),note:'Browser geolocation; location source may be fused; uncertainty not calibrated',pointName:$('pointName').value,reference:tr&&tr!=='invalid'?tr:null,currentResult:current?{latitude:current.lat,longitude:current.lon,accepted:current.accepted,rejected:current.rejected,rms_m:current.rms,halfDrift_m:current.drift,internalProxy_m:current.proxy}:null,sessions:runs.map(r=>({name:r.name,start:r.started,duration_s:r.duration,result:{latitude:r.result.lat,longitude:r.result.lon,accepted:r.result.accepted,rejected:r.result.rejected,rms_m:r.result.rms,halfDrift_m:r.result.drift,internalProxy_m:r.result.proxy},samples:r.raw})),activeOrLastSessionSamples:raw};download(JSON.stringify(payload,null,2),filename('json'),'application/json;charset=utf-8');}
+ else {let rows=[['session','point','timestamp_utc','receive_utc','latitude','longitude','reported_accuracy_m','altitude_m','altitude_accuracy_m','speed_mps','heading_deg']];let source=runs.length?runs.map((r,i)=>({idx:runs.length-i,name:r.name,raw:r.raw})):[{idx:1,name:$('pointName').value,raw}];source.forEach(s=>s.raw.forEach(p=>rows.push([s.idx,s.name,new Date(p.fixTs).toISOString(),new Date(p.receivedAt).toISOString(),p.lat,p.lon,p.acc,p.alt??'',p.altAcc??'',p.speed??'',p.heading??''])));let csv='\ufeff'+rows.map(r=>r.map(c=>'"'+String(c??'').replace(/"/g,'""')+'"').join(',')).join('\r\n');download(csv,filename('csv'),'text/csv;charset=utf-8');}
+}
+$('startBtn').addEventListener('click',start);$('stopBtn').addEventListener('click',()=>stop());$('calcTruth').addEventListener('click',()=>{calcTruth();renderHistory()});$('truthLat').addEventListener('input',()=>{calcTruth(false);renderHistory()});$('truthLon').addEventListener('input',()=>{calcTruth(false);renderHistory()});$('exportJson').addEventListener('click',()=>exportData('json'));$('exportCsv').addEventListener('click',()=>exportData('csv'));
+$('copyResult').addEventListener('click',async()=>{if(!current)return;let s=`TOHAR ${$('pointName').value}\nLatitude: ${fmt(current.lat,9)}\nLongitude: ${fmt(current.lon,9)}\nRMS: ${fmt(current.rms,2)} m\nAccepted: ${current.accepted}\nWarning: internal spread is not absolute accuracy.`;try{await navigator.clipboard.writeText(s);message('התוצאה הועתקה ללוח.','ok')}catch{message('העתקה אינה זמינה בדפדפן הזה.','warning')}});
+window.addEventListener('resize',draw);document.addEventListener('visibilitychange',()=>{if(document.hidden&&receiving)message('הדף עבר לרקע. הדפדפן עלול להשהות את המיקום; השאר את המסך פעיל.','warning')});draw();
+</script></body></html>
